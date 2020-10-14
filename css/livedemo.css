@@ -1,0 +1,113 @@
+html {
+  font-size: 5.33333333vw;
+}
+.wrap {
+  width: 18.75rem;
+  overflow: hidden;
+  background-image: url(../image/livedemo-background.png);
+}
+.topbar {
+  width: 18.75rem;
+  height: 4.25rem;
+  background: url(../image/heard-1.png) 0 1%, url(../image/heard-2.png) 10% 1%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 1.2rem;
+}
+.topbar-left {
+  padding-top: 0.6rem;
+  margin-left: 0.8rem;
+}
+.topbar-left img {
+  width: 3rem;
+}
+.user-message {
+  position: relative;
+}
+.student-msg {
+  position: absolute;
+  left: 2.75rem;
+  top: 0.25rem;
+  width: 3.5rem;
+  height: 2.25rem;
+  color: wheat;
+  margin-left: 0.6rem;
+}
+.student-msg p {
+  font-size: 0.75rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.student-msg span {
+  font-size: 0.6rem;
+  color: #abc1c9;
+}
+#topbar-right {
+  float: right;
+  color: white;
+  margin-top: -2.5rem;
+}
+#topbar-right img {
+  width: 0.6rem;
+  padding-left: 0.4rem;
+  padding-right: 0.8rem;
+}
+#topbar-right span {
+  font-size: 0.6rem;
+  color: #44f7fe;
+}
+#box {
+  color: aliceblue;
+  width: 2rem;
+  height: 25px;
+  border: 1px solid #c5c5c5;
+  border-radius: 10px;
+  background-color: #797777;
+  text-align: center;
+  /* text-indent: 5px; */
+  font-size: 0.375rem;
+  line-height: 25px;
+  margin-right: 0.8rem;
+  cursor: pointer;
+}
+#down {
+  border: 1px solid #c5c5c5;
+  width: 90px;
+  margin-left: 5px;
+  display: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+  font-size: 0.35rem;
+  border-bottom: 1px dashed #c5c5c5;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  color: aliceblue;
+  background-color: #333;
+  cursor: pointer;
+}
+li:hover {
+  background-color: #5c0e0e;
+}
+.video {
+  width: 18.75rem;
+  padding: 0 0.75rem;
+  padding-left: 0.875rem;
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+.video-topbar {
+  position: absolute;
+  z-index: 99;
+  margin-top: 0.6rem;
+  margin-left: 0.6rem;
+}
+.video-topbar span {
+  font-size: 0.625rem;
+  color: #fff;
+}
