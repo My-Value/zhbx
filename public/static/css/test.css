@@ -1,0 +1,8 @@
+html {
+  font-size: 5.33333333vw;
+}
+.wrap {
+  width: 18.75rem;
+  height: 35rem;
+  background-image: url(/public/static/img3/newbindin-background.png);
+}

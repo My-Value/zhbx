@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频监控</title>
+    <link rel="stylesheet" href="/public/static/css/livedemo-css.css">
+    <link rel="stylesheet" href="/public/static/css/common.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 
+            监控页面的头部信息
+            头像，学生姓名，班级
+            切换学生的功能
+         -->
+        <div class="topbar" id="heard">
+            <div class="topbar-left">
+                <div class="user-message">
+                    <img src="../image/new-user-image.png" alt="">
+                    <div class="student-msg">
+                        <p id="syudentname">张三</p>
+                        <span id="classroom">七年级一班（三）</span>
+                    </div>
+                </div>
+            </div>
+            <div id="choose">
+                <select id="pid" type='切换学生' name="切换学生" onchange="gradeChange()" >
+                    <option selected:disabled style="display: none;">切换学生 V</option>
+                    <option value="0">赵珂</option>
+                    <option value="1">谢士举</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="banner">
+            <div class="video frist-video">
+                <div class="video-topbar">
+                    <span class="style-font1">班级视频</span>
+                </div>
+                <video class="video-style" id="myVideo1" src="" controls preload="auto" autoplay="muted"
+                    style="width: 90%;height: 200px;border-radius:5%;">
+                    <source id="source1" src="" type="application/x-mpegURL" />
+                </video>
+            </div>
+
+            <div class="video frist-video">
+                <div class="video-topbar">
+                    <span class="style-font1">操场视频</span>
+                </div>
+                <video class="video-style" id="myVideo2" src="" controls preload="auto" autoplay="muted"
+                    style="width: 90%;height: 200px;border-radius:5%;">
+                    <source id="source2" type="application/x-mpegURL" />
+                </video>
+            </div>
+
+            <div id="myVideo1" class="video frist-video">
+                <div class="video-topbar">
+                    <span class="style-font1">校门视频</span>
+                </div>
+                <video class="video-style" id="myVideo3" src="" controls preload="auto" autoplay="muted"
+                    style="width: 90%;height: 200px;border-radius:5%;">
+                    <source id="source3" type="application/x-mpegURL" />
+                </video>
+            </div>            
+        </div>
+    </div>
+    <script src="/public/static/js/livedemo-js.js"></script>
+</body>
+
+</html>

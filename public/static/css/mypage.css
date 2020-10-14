@@ -1,0 +1,105 @@
+html {
+  font-size: 5.33333333vw;
+}
+.wrap {
+  width: 18.75rem;
+  height: 39rem;
+  background-image: url(/public/static/img/MyPage-background.png);
+  overflow: hidden;
+}
+.topbar {
+  height: 7.5rem;
+  background-image: url(/public/static/img/MyPage-topbar.png);
+  background-size: 100% 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.topbar img {
+  width: 3.95rem;
+  margin: 1.95rem 7.1rem 1.45rem 7.3rem;
+}
+.user-info {
+  height: 12.125rem;
+  background-image: url(/public/static/img/MyPage-banner-background.png);
+  background-size: 100% 100% ;
+  padding-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+.user-content {
+  padding: 0 0.8rem;
+}
+.user-content li {
+  border-bottom: 1px solid #7DC3C6;
+  padding-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+.user-content .user-info-left {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #000;
+  margin-bottom: 0.4rem;
+  margin-left: 2rem;
+}
+.user-info-right {
+  width: 7.5rem;
+  display: inline-block;
+  text-align: right;
+  right: 0;
+  font-size: 0.75rem;
+  color: #366c6e;
+}
+.footer {
+  height: 3.375rem;
+  padding: 0.75rem 0.8rem;
+  background-image: url(/public/static/img/MyPage-footer-background.png);
+}
+.footer .footer-left {
+  font-size: 0.75rem;
+  float: left;
+}
+.footer-left span {
+  padding-top: 0.5rem;
+}
+.footer-right {
+  width: 6rem;
+  font-size: 0.65rem;
+}
+.footer-right img {
+  width: 0.7rem;
+  vertical-align: middle;
+  margin-left: 1.325rem;
+}
+.footer-right .parent-name {
+  position: absolute;
+  left: 4rem;
+}
+.footer-right .parent-pnumber {
+  position: absolute;
+  right: 5.75rem;
+}
+.parent-info {
+  margin-bottom: 0.6rem;
+  padding: 0 0.75rem;
+}
+#del {
+  margin: 0.5rem 3.975rem 0 3.75rem;
+  padding: 0.4rem 2rem;
+  color: #fff;
+  text-align: center;
+  background-color: #226568;
+}
+#del span {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#default {
+  margin: 1rem 3.975rem 0 3.75rem;
+  padding: 0.4rem 2rem;
+  color: #fff;
+  text-align: center;
+  background-color: #52C2C6;
+}
+#default span {
+  font-size: 0.75rem;
+  font-weight: 500;
+}

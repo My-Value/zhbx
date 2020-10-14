@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申请变更</title>
+    <link rel="stylesheet" href="/public/static/css/change-syudentMsg.css">
+    <link rel="stylesheet" href="/public/static/css/common.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="topbar">
+            <div class="changeMsg">
+                <ul id="studentName">
+                    <li class="lis currentcolor">
+                        <span class="name">赵珂</span>
+                        <span class="studentNumber">2323233232323</span>
+                    </li>
+                    <li class="lis">
+                        <span class="name">王梦梅</span>
+                        <span class="studentNumber">111111111111111111111</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="changeSchool">
+                    <label>变更学校：</label>
+                    <div class="lodMsg-school">
+                        <span id="alterMsgSchool">一中</span>
+                        <span>(目前就读学校)</span>
+                    </div>
+                    <select id="getschool" type='切换学生' name="切换学生" onchange="gets()">
+                        <!-- <option selected:disabled style="display: none;">请选择您要变更的学校</option> -->
+                        <option value="101">周口一中</option>
+                        <option value="102">周口四中</option>
+                    </select>
+                </div>
+                <div class="changeClassroom">
+                    <label>变更班级：</label>
+                    <div class="lodMsg-classroom">
+                        <span id="alterMsgClassroom">七年级一班</span>
+                        <span>(目前就读班级)</span>
+                    </div>
+                    <select name="" id="getclassroom" onchange="getc()">
+                        <option selected:disabled style="display: none;">请选择您要变更的班级</option>
+                        <!-- <option value="">七年级一班</option>
+                        <option value="">七年级二班</option> -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- <div class="content2">
+                <div class="changeSchool">
+                    <label>变更学校：</label>
+                    <div class="lodMsg-school">
+                        <span class="alterMsg"></span>
+                        <span>(目前就读学校)</span>
+                    </div>
+                    <select name="" id="" placeholder="">
+                        <option selected:disabled style="display: none;">请选择您要变更的学校</option>
+                        <option value="0">周口一中</option>
+                        <option value="1">周口四中</option>
+                    </select>
+                </div>
+                <div class="changeClassroom">
+                    <label>变更班级：</label>
+                    <div class="lodMsg-classroom">
+                        <span class="alterMsg"></span>
+                        <span>(目前就读班级)</span>
+                    </div>
+                    <select name="" id="">
+                        <option value="0">七年级一班</option>
+                        <option value="1">七年级二班</option>
+                        <option value="1">七年级三班</option>
+                        <option value="1">七年级四班</option>
+                        <option value="1">七年级五班</option>
+                    </select>
+                </div>
+            </div> -->
+        </div>
+        <button id="btn" value="提交">确定申请</button>
+    </div>
+    <script src="/public/static/js/jquery-3.5.1.js"></script>
+    <script>
+        var getstudentname = '';
+        var changeSchool = '';
+        var studentNumber = ["七一班","七二班","七三班"];
+        var changeClassroom = ["一中","四中"];
+        var str = '';
+        var constname='';
+        
+        // alterMsgSchool,alterMsgClassroom获取的老的班级号和学校
+        var alterMsgSchool = document.getElementById("alterMsgSchool").innerHTML
+        var alterMsgClassroom = document.getElementById("alterMsgClassroom").innerHTML
+        var lis = document.getElementById("studentName").getElementsByTagName("li");
+        lis[0].style.backgroundColor = "#79BAF2";
+        getstudentname = lis[0].getElementsByClassName("name")[0].innerHTML;
+        studentNumber = lis[0].getElementsByClassName("studentNumber")[0].innerHTML;
+        for (var i = 0; i < lis.length; i++) {
+            // 学校的下拉菜单
+            var getschool = document.getElementById("getschool");
+            var getclassroom = document.getElementById("getclassroom");
+            function gets() {
+                var index = getschool.selectedIndex;
+                var values = getschool.options[index].value
+                changeSchool = values;
+                console.log("我是获取下拉框的value" + changeSchool);
+                str = [
+                    [{"id":"26", "calss":"七年级四班",}],
+                    [{"id":"27", "calss":"七年级五班",}],
+                ];
+                console.log(str.length);
+                var frage = document.createDocumentFragment();
+                for (var i = 0, len = str.length; i < len; i++) {
+                    getclassroom.options.length=0;
+                    for (var j = 0; j < str[i].length; j++) {//循环里面的数组
+                        var v=str[i]["num"];
+                        var c=str[i]["name"];
+                    }
+                    var o = document.createElement("option");
+
+                    o.value = v;
+                    o.text = c;
+                    frage.appendChild(o);
+                }
+                getclassroom.appendChild(frage);
+                // $.ajax({
+                //     type: "POST",
+                //     dataType: "json",
+                //     url: "studentList",
+                //     data: {
+                //         changes: changeSchool
+                //     },
+                //     success: function (msg) {
+                //         console.log(msg);
+                //         str=msg.
+
+                //     },
+                //     error: function (XMLHttpRequest, textStatus, errorThrown) {
+                //         console.log(XMLHttpRequest.status);
+                //         console.log(XMLHttpRequest.readyState);
+                //         console.log(textStatus);
+                //     }
+                // });
+            }
+            // var getc = document.getElementById("getclassroom");
+
+
+
+            // getclassroom.appendChild(frage);
+
+            // 班级的下拉菜单
+            function getc() {
+                var index = getclassroom.selectedIndex;
+                console.log(index);
+                changeClassroom = index;
+            }
+            lis[i].setAttribute("index", i);
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    // 获取学生名字
+                    var name = this.getElementsByClassName("name")[0].innerHTML;
+                    var choosetudentNumber = this.getElementsByClassName("studentNumber")[0].innerHTML;
+                    if (this.getAttribute("index") == i) {
+                        lis[i].style.color = "#fff";
+                        lis[i].style.backgroundColor = "#79BAF2";
+                        getstudentname = name;
+                        studentNumber = choosetudentNumber
+                        console.log(getstudentname);
+                        console.log(studentNumber);
+                        // $.ajax({
+                        //         type: "POST",
+                        //         dataType: "json",
+                        //         url: "studentList",
+                        //         data: {
+                        //             stuNum:studentNumber
+                        // stuName: getstudentname
+                        // changes: changeSchool
+                        // changec: changeClassroom
+                        // oldSchool: alterMsgSchool
+                        // oldClassroom: alterMsgSchool
+                        //         },
+                        //         success: function (msg) {
+                        //             console.log(msg);
+                        //             console.log(msg.classVideo);
+                        //             syudentname.innerHTML=msg.name;
+                        //             classroom.innerHTML=msg.className;
+                        //             myVideo1.setAttribute("src",msg.classVideo);
+                        //             myVideo2.setAttribute("src",msg.gateVideo);
+                        //             myVideo3.setAttribute("src",msg.playgroundVideo);
+                        //         },
+                        //         error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        //             console.log(XMLHttpRequest.status);
+                        //             console.log(XMLHttpRequest.readyState);
+                        //             console.log(textStatus);
+                        //         }
+                        // });
+                    } else {
+                        lis[i].style.color = "";
+                        lis[i].style.backgroundColor = "";
+                        // lis[i].
+                    }
+                }
+            }
+        }
+        document.getElementById("btn").addEventListener("click", function () {
+            console.log(
+                "获取的名字" + getstudentname +
+                "，获取的变更学校" + changeSchool +
+                "，获取的变更班级" + changeClassroom +
+                "，获取的学籍号" + studentNumber +
+                "，获取的老学校" + alterMsgSchool +
+                "，获取的老班级" + alterMsgClassroom
+            );
+            if (changeSchool == '' || changeClassroom == '') {
+                alert("请选择变更的班级或者学校")
+            } else {
+                var flag = confirm("请确定提交信息");
+                if (flag) {
+                    alert("提交成功，请等待管理员审核")
+                    // window.location.href="../"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
